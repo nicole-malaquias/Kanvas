@@ -1,24 +1,24 @@
 """
 {
-    "username": "Fabiano Facilitador",
+    "username": "Nicole Estudante",
     "password": "1234",
     "is_superuser": false,
-    "is_staff": true
+    "is_staff": false
 }
 
 {
-    "username": "Kario Instrutor",
+    "username": "Kairo Instrutor",
     "password": "1234",
     "is_superuser": true,
     "is_staff": true
 }
 
 {
-    "username": "Nicole Estudante",
+    "username": "Eduardo Facilitador",
     "password": "1234",
     "is_superuser": false,
-    "is_staff": false
-    
+    "is_staff": true
 }
+
 
 """

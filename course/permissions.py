@@ -15,18 +15,15 @@ class CoursesByIdPermission(BasePermission) :
     
     def has_permission(self, request, view) :
         
-        methods =['DELETE', 'GET', 'PUT']
-        
-        if request.method in methods : 
+        if request.method == 'PUT' : 
             
            if request.user.is_superuser == True or request.user.is_staff ==  True :
                return True
         
-        if request.method in methods :
-            
-            if request.user.is_superuser == True :
+        if request.method == 'DELETE' and request.user.is_superuser == True :
+
                return True
            
-        if request.method in methods :
+        if request.method == 'GET' :
             return True 
         
