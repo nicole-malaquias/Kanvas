@@ -35,30 +35,12 @@ def createUser(request):
       data = request.data
       user =''
       
-      if data['is_staff'] == False and data['is_superuser'] == False :
-        
-        user = User.objects.create_user(
-        username= data['username'], 
-        password= data['password'],
-        is_staff= False ,
-        is_superuser = False)
-      
-      if data['is_staff'] == True and data['is_superuser'] == False :
-        
-        user = User.objects.create_user(
-        username= data['username'], 
-        password= data['password'],
-        is_staff= True ,
-        is_superuser = False)
-  
-      if data['is_staff'] == True and data['is_superuser'] == True :
-       
-        user = User.objects.create_superuser(
-        username= data['username'], 
-        password= data['password'],
-        is_staff= True ,
-        is_superuser = True)
-     
+      user = User.objects.create_user(
+      username= data['username'], 
+      password= data['password'],
+      is_staff=  data['is_staff'],
+      is_superuser =  data['is_superuser'])
+    
       response = UserSerializer(user)
       return Response(response.data,status=status.HTTP_201_CREATED)
     

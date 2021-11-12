@@ -34,7 +34,7 @@ def courses(request):
       course = Course.objects.all()
       serializer = [CourseSerializer(i) for i in course]
       response = [course.data for course in serializer]
-      
+      #response = CourseSerializer(course,many=True) tentei e deu erro  ;-;
       return Response(response)
 
 @api_view(['PUT'])
